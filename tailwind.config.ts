@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        'mona-sans': 'var(--font-mona-sans)',
+        primary: ['var(--font-mona-sans)', ...defaultTheme.fontFamily.sans],
       },
       dropShadow: {
         glow: '0 0 1px rgba(252, 211, 77)',

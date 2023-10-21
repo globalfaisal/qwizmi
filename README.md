@@ -1,11 +1,6 @@
-# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
+# qwizmi
 
-<div align="center">
-  <h2>🔋 ts-nextjs-tailwind-starter</h2>
-  <p>Next.js + Tailwind CSS + TypeScript starter with useful development features.</p>
-  <br>
-   <a href="https://nextjs-tailwind-starter-git-main-globalfaisal.vercel.app/">Demo</a>
-</div>
+Quiz App that uses Open Ai api
 
 ## Features
 
@@ -31,35 +26,19 @@ This repository is 🔋 battery packed with:
 
 ## Getting Started
 
-### 1. Clone this template using one of the three ways
+### 1. Setup
 
-1. Use this repository as template
+1. Install [PNPM - package manager](https://github.com/pnpm/pnpm)
+   - We use PNPM to make sure we're all using the same `node` and `npm` versions
+2. `git clone` this project and `cd` into the project directory
+3. Setup Node.js and PNPM versions used by this project:
+   - Install pnpm if you already don't have it: `npm install -g @pnpm/exe`
+   - Switch to the Node.js version: `pnpm env use -g <node-version>`. Also
+4. Install NPM dependencies: `pnpm install`
+5. Copy the `.env.example` file to create `.env.local` and replace the values with your development values
+6. List available project scripts: Run `pnpm run` or look in `package.json`
 
-   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
-
-   I'll appreciate if you do, so this template can be known by others too 😄
-
-   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
-
-2. Using `create-next-app`
-
-   ```bash
-   npx create-next-app -e https://github.com/globalfaisal/ts-nextjs-tailwind-starter project-name
-   ```
-
-3. Deploy to Vercel
-
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fglobalfaisal%2Fts-nextjs-tailwind-starter)
-
-### 2. Install dependencies
-
-It is encouraged to use **pnpm** so the husky hooks can work properly.
-
-```bash
-pnpm install
-```
-
-### 3. Run the development server
+### 2. Run the development server
 
 You can start the server using this command:
 
@@ -70,14 +49,6 @@ pnpm dev
 The development server is using next.js HTTPS support for development(localhost): check package.json dev script.
 Open [https://localhost:3000](https://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`.
 
-### 4. Change defaults
+### 3. Commit Message Convention
 
-There are some things you need to change including title, urls, favicons, etc.
-
-Find all comments with !STARTERCONF, then follow the guide.
-
-Don't forget to change the package name in package.json
-
-### 5. Commit Message Convention
-
-This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+Using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.

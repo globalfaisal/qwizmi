@@ -2,20 +2,7 @@
 
 import Head from 'next/head';
 import * as React from 'react';
-import UnderlineLink from '@/components/links/UnderlineLink';
 import NextImage from '@/components/NextImage';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
 
 export default function HomePage() {
   return (
@@ -28,20 +15,17 @@ export default function HomePage() {
           <NextImage
             priority
             src='/svg/Logo.svg'
-            width={200}
-            height={200}
             alt='logo'
-            className='mx-auto mb-8'
+            width={480}
+            height={480}
           />
-          <div className='text-6xl font-bold leading-none text-gray-900 sm:text-4xl'>
-            Next.js + Tailwind CSS + TypeScript Starter
-          </div>
-          <footer className='absolute bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://github.com/globalfaisal'>
-              globalfaisal
-            </UnderlineLink>
-          </footer>
+          <h1 className='mb-4 font-primary text-8xl font-black leading-none text-gray-900 '>
+            qwizmi
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa,
+            corporis.
+          </p>
         </div>
       </section>
     </main>

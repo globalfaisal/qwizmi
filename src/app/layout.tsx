@@ -1,10 +1,8 @@
 import '@/styles/globals.css';
 import { Metadata } from 'next';
 import * as React from 'react';
+import { monoSans } from '@/lib/localFonts';
 import { siteConfig } from '@/constant/config';
-
-// !STARTERCONF Change these default meta
-// !STARTERCONF Look at @/constant/config to change them
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -14,8 +12,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
-  // !STARTERCONF this is the default favicon, you can generate your own from https://realfavicongenerator.net/
-  // ! copy to /favicon folder
   icons: {
     icon: '/favicon/favicon.ico',
     shortcut: '/favicon/favicon-16x16.png',
@@ -45,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang='en' className={monoSans.variable}>
       <body>{children}</body>
     </html>
   );

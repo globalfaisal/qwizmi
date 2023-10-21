@@ -1,7 +1,13 @@
 {
-  "name": "nextjs-tailwind-starter",
+  "name": "qwizmi",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Faisal",
+    "role": "Developer",
+    "url": "https://hellofaisal.com",
+    "github": "https://github.com/globalfaisal"
+  },
   "scripts": {
     "dev": "next dev --experimental-https",
     "build": "next build",
@@ -60,11 +66,12 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.3",
+    "tsc-files": "1.1.4",
     "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=16.15.0",
-    "pnpm": ">=8.9.0",
+    "pnpm": ">=8.9.2",
     "npm": "Please use pnpm instead of npm",
     "yarn": "Please use pnpm instead of yarn"
   }
