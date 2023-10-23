@@ -2,38 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* #region  /**=========== Primary Color =========== */
-  /* !STARTERCONF Customize these variable, It's recommended to use hsl for colors */
-  --tw-color-primary-50: 240 249 255;
-  --tw-color-primary-100: 224 242 254;
-  --tw-color-primary-200: 186 230 253;
-  --tw-color-primary-300: 125 211 252;
-  --tw-color-primary-400: 56 189 248;
-  --tw-color-primary-500: 14 165 233;
-  --tw-color-primary-600: 2 132 199;
-  --tw-color-primary-700: 3 105 161;
-  --tw-color-primary-800: 7 89 133;
-  --tw-color-primary-900: 12 74 110;
-
-  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #f0f9ff */
-  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #e0f2fe */
-  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #bae6fd */
-  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #7dd3fc */
-  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #38bdf8 */
-  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #0ea5e9 */
-  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #0284c7 */
-  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #0369a1 */
-  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
-  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
-  /* #endregion  /**======== Primary Color =========== */
-}
-
 @layer base {
-  .cursor-newtab {
-    cursor:
-      url('/images/new-tab.png') 10 10,
-      pointer;
+  :root {
+    --color-bkg: 20deg 100% 99%;
+    --color-content: 235deg 5% 44%;
+
+    --color-primary: 253deg 65% 49%;
+    --color-secondary: 56deg 53% 38%;
+    --color-accent: 152deg 11% 23%;
+  }
+
+  :root[data-theme='light'] {
+    --color-bkg: 20deg 100% 99%;
+    --color-content: 235deg 5% 44%;
+
+    --color-primary: 253deg 65% 49%;
+    --color-secondary: 56deg 53% 38%;
+    --color-accent: 152deg 11% 23%;
+  }
+
+  :root[data-theme='dark'] {
+    --color-bkg: 220deg 100% 1%;
+    --color-content: 235deg 5% 44%;
+
+    --color-primary: 253deg 65% 49%;
+    --color-secondary: 56deg 53% 38%;
+    --color-accent: 152deg 11% 23%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bkg: 220deg 100% 1%;
+      --color-content: 235deg 5% 44%;
+
+      --color-primary: 253deg 65% 49%;
+      --color-secondary: 56deg 53% 38%;
+      --color-accent: 152deg 11% 23%;
+    }
   }
 
   /* #region  /**=========== Typography =========== */
@@ -73,8 +78,10 @@
     @apply mx-auto w-11/12;
   }
 
-  .bg-dark a.custom-link {
-    @apply border-gray-200 hover:border-gray-200/0;
+  .cursor-newtab {
+    cursor:
+      url('/images/new-tab.png') 10 10,
+      pointer;
   }
 
   /* Class to adjust with sticky footer */
