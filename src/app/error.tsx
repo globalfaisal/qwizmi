@@ -1,33 +1,29 @@
-'use client'; // Error components must be Client Components
+'use client' // Error components must be Client Components
 
-import * as React from 'react';
-import { RiAlarmWarningFill } from 'react-icons/ri';
+import * as React from 'react'
 
 export default function Error({
   error,
   reset,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+  error: Error & { digest?: string }
+  reset: () => void
 }) {
   React.useEffect(() => {
     // eslint-disable-next-line no-console
-    console.error(error);
-  }, [error]);
+    console.error(error)
+  }, [error])
 
   return (
     <main>
-      <section className='bg-white'>
-        <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-black'>
-          <RiAlarmWarningFill size={60} className=' text-red-500 ' />
-          <h1 className='mt-8 text-4xl md:text-6xl'>
-            Oops, something went wrong!
-          </h1>
-          <button onClick={reset} className='mt-4'>
+      <section>
+        <div className="container">
+          <h1 className="text-4xl md:text-6xl">Oops, something went wrong!</h1>
+          <button onClick={reset} className="mt-2">
             Try again
           </button>
         </div>
       </section>
     </main>
-  );
+  )
 }

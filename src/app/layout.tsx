@@ -1,8 +1,18 @@
-import '@/styles/globals.css';
-import { Metadata } from 'next';
-import * as React from 'react';
-import { monoSans } from '@/lib/localFonts';
-import { siteConfig } from '@/constant/config';
+import '@/styles/globals.css'
+import { Metadata } from 'next'
+import localFont from 'next/font/local'
+import * as React from 'react'
+import { cn } from '@/lib/utils'
+import ThemeProvider from '@/components/theme-provider'
+import { siteConfig } from '@/constant/config'
+
+export const inter = localFont({
+  src: '../fonts/inter-var-latin.woff2',
+  style: 'normal',
+  weight: '100,900',
+  display: 'optional',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -33,16 +43,34 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og.jpg`],
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={monoSans.variable}>
-      <body>{children}</body>
+    <html lang="en" className={cn(inter.variable)}>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="main">
+            <div
+              className={cn(
+                'content',
+                'container relative z-[10] px-6 pt-16 pb-20 md:pt-32 md:px-8 md:pb-40',
+              )}
+            >
+              {children}
+            </div>
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
-  );
+  )
 }

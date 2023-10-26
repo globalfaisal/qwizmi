@@ -1,19 +1,21 @@
-import Image, { ImageProps } from 'next/image';
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+'use client'
+
+import Image, { ImageProps } from 'next/image'
+import * as React from 'react'
+import { cn } from '@/lib/utils'
 
 type NextImageProps = {
-  useSkeleton?: boolean;
+  useSkeleton?: boolean
   classNames?: {
-    image?: string;
-    blur?: string;
-  };
-  alt: string;
+    image?: string
+    blur?: string
+  }
+  alt: string
 } & (
   | { width: string | number; height: string | number }
   | { fill: boolean; width?: string | number; height?: string | number }
 ) &
-  ImageProps;
+  ImageProps
 
 /**
  *
@@ -31,9 +33,9 @@ export default function NextImage({
   ...rest
 }: NextImageProps) {
   const [status, setStatus] = React.useState(
-    useSkeleton ? 'loading' : 'complete'
-  );
-  const widthIsSet = className?.includes('w-') ?? false;
+    useSkeleton ? 'loading' : 'complete',
+  )
+  const widthIsSet = className?.includes('w-') ?? false
 
   return (
     <figure
@@ -43,7 +45,7 @@ export default function NextImage({
       <Image
         className={cn(
           classNames?.image,
-          status === 'loading' && cn('animate-pulse', classNames?.blur)
+          status === 'loading' && cn('animate-pulse', classNames?.blur),
         )}
         src={src}
         width={width}
@@ -53,5 +55,5 @@ export default function NextImage({
         {...rest}
       />
     </figure>
-  );
+  )
 }
