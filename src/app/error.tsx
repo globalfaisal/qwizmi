@@ -2,13 +2,13 @@
 
 import * as React from 'react'
 
-export default function Error({
+const ErrorPage = ({
   error,
   reset,
 }: {
   error: Error & { digest?: string }
   reset: () => void
-}) {
+}) => {
   React.useEffect(() => {
     // eslint-disable-next-line no-console
     console.error(error)
@@ -27,3 +27,5 @@ export default function Error({
     </main>
   )
 }
+
+export default ErrorPage

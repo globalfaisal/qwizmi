@@ -2,8 +2,8 @@ import '@/styles/globals.css'
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 import * as React from 'react'
-import { cn } from '@/lib/utils'
-import ThemeProvider from '@/components/theme-provider'
+import Header from '@/components/header'
+import Providers from '@/components/providers'
 import { siteConfig } from '@/constant/config'
 
 export const inter = localFont({
@@ -45,32 +45,23 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" className={cn(inter.variable)}>
+    <html lang="en" className={inter.variable}>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <main className="main">
-            <div
-              className={cn(
-                'content',
-                'container relative z-[10] px-6 pt-16 pb-20 md:pt-32 md:px-8 md:pb-40',
-              )}
-            >
-              {children}
+            <div className="content">
+              <Header />
+              <div className="container relative z-10 pb-20  pt-16 antialiased md:pb-32 md:pt-24">
+                {children}
+              </div>
             </div>
           </main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
 }
+
+export default RootLayout
