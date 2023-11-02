@@ -115,7 +115,6 @@
     top: 150px;
     opacity: 0.2;
     transform: translateZ(0);
-
   }
 
   @media (prefers-color-scheme: dark) {

@@ -46,4 +46,6 @@ sitemap-*.xml
 
 # tailwind
 src/styles/dist.css
+
+# SSL
 certificates

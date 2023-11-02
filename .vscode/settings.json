@@ -3,16 +3,13 @@
   "css.validate": false,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  // Tailwind CSS Autocomplete, add more if used in projects
-  "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "classNames",
-    "containerClassName"
-  ],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "classNames"],
   "typescript.preferences.importModuleSpecifier": "non-relative"
 }
