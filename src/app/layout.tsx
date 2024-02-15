@@ -2,8 +2,8 @@ import '@/styles/globals.css'
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 import * as React from 'react'
-import Header from '@/components/header'
-import Providers from '@/components/providers'
+import Navbar from '@/components/Navbar'
+import Providers from '@/components/Providers'
 import { siteConfig } from '@/constant/config'
 
 export const inter = localFont({
@@ -52,7 +52,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Providers>
           <main className="main">
             <div className="content">
-              <Header />
+              <Navbar />
               <div className="container relative z-10 pb-20  pt-16 antialiased md:pb-32 md:pt-24">
                 {children}
               </div>

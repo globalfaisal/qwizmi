@@ -9,16 +9,14 @@ type Props = {
 
 const Providers = ({ children }: Props) => {
   return (
-    <SessionProvider>
-      <NextThemesProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        {children}
-      </NextThemesProvider>
-    </SessionProvider>
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <SessionProvider>{children}</SessionProvider>
+    </NextThemesProvider>
   )
 }
 
