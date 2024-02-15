@@ -7,12 +7,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // @TODO: Uncomment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
 
   webpack(config) {
     // Grab the existing rule that handles SVG imports

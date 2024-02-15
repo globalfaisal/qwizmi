@@ -11,9 +11,10 @@ const SignInButton = ({ text }: Props) => {
   return (
     <Button
       variant="default"
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault()
         signIn('google').catch((error) => {
-          console.error('Failed to sign in', error)
+          console.error('Failed to sign in ', error)
         })
       }}
     >

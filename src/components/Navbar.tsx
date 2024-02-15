@@ -1,8 +1,10 @@
+import { User } from '@prisma/client'
 import Link from 'next/link'
 import { getAuthSession } from '@/lib/nextauth'
 import NextImage from '@/components/NextImage'
 import SignInButton from '@/components/SingInButton'
 import ThemeToggle from '@/components/ThemeToggle'
+import UserAccountNav from '@/components/UserAccountNav'
 
 const Navbar = async () => {
   const session = await getAuthSession()
@@ -19,13 +21,13 @@ const Navbar = async () => {
             className="dark:invert"
           />
         </Link>
-        <aside className="flex gap-2">
+        <aside className="flex gap-6">
+          <ThemeToggle className="h-8 w-8" />
           {session?.user ? (
-            <p>Hello, {session.user.name}</p>
+            <UserAccountNav user={session.user as User} />
           ) : (
             <SignInButton text="Sign in" />
           )}
-          <ThemeToggle className="h-8 w-8" />
         </aside>
       </div>
     </nav>
