@@ -1,18 +1,12 @@
 import '@/styles/globals.css'
 import { Metadata } from 'next'
-import localFont from 'next/font/local'
+import { DM_Sans } from 'next/font/google'
 import * as React from 'react'
 import Navbar from '@/components/Navbar'
 import Providers from '@/components/Providers'
 import { siteConfig } from '@/constant/config'
 
-export const inter = localFont({
-  src: '../fonts/inter-var-latin.woff2',
-  style: 'normal',
-  weight: '100,900',
-  display: 'optional',
-  variable: '--font-inter',
-})
+const font = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -47,16 +41,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" suppressHydrationWarning={true} className={inter.variable}>
-      <body>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={font.className}>
         <Providers>
-          <main className="main">
-            <div className="content">
-              <Navbar />
-              <div className="container relative z-10 pb-20  pt-16 antialiased md:pb-32 md:pt-24">
-                {children}
-              </div>
-            </div>
+          <main className="h-full">
+            <Navbar />
+            {children}
           </main>
         </Providers>
       </body>
