@@ -19,7 +19,7 @@ module.exports = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         gradient: 'hsl(var(--gradient))',
-
+        black: 'hsl(var(--black))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',

@@ -2,7 +2,9 @@ import '@/styles/globals.css'
 import { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import * as React from 'react'
-import Navbar from '@/components/Navbar'
+import { cn } from '@/lib/utils'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import Providers from '@/components/Providers'
 import { siteConfig } from '@/constant/config'
 
@@ -42,11 +44,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={font.className}>
+      <body className={cn('h-dvh flex flex-col', font.className)}>
         <Providers>
-          <main className="h-full">
-            <Navbar />
-            {children}
+          <Header />
+          <main className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+            <div className="flex-1">{children}</div>
+            <Footer />
           </main>
         </Providers>
       </body>

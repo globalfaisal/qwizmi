@@ -10,7 +10,7 @@ type Props = {
 const SignInButton = ({ text }: Props) => {
   return (
     <Button
-      variant="default"
+      variant="outline"
       onClick={(e) => {
         e.preventDefault()
         signIn('google').catch((error) => {
